@@ -3,7 +3,12 @@ agent any
     stages {
         stage('Clone Git') {
             steps {
-                git 'git@github.com:jaggu21/JenkinsDemo.git'
+				checkout([
+                    $class: 'GitSCM', 
+                    branches: [[name: '*/master']], 
+                    extensions: [], 
+                    userRemoteConfigs: [[url: 'git@github.com:jaggu21/JenkinsDemo.git']]
+                ])
             }
         }
         stage('Build Code') {
