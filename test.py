@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import unittest
 from input import *
 from math import *
