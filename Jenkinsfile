@@ -7,7 +7,7 @@ agent any
                     $class: 'GitSCM', 
                     branches: [[name: '*/master']], 
                     extensions: [], 
-                    userRemoteConfigs: [[url: 'git@github.com:jaggu21/JenkinsDemo.git']]
+                    userRemoteConfigs: [[url: 'https://github.com/Nandakishore-Menon/JenkinsDemo.git']]
                 ])
             }
         }
