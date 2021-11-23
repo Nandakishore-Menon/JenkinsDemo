@@ -23,9 +23,9 @@ agent any
         always {
              echo 'Sending Email.'
             
-             emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n Details at: ${env.BUILD_URL}",
+             emailext body: "Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} finished with STATUS: ${currentBuild.currentResult}: \n Details at: ${env.BUILD_URL}",
                  recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
-                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
+                 subject: "Jenkins Build ${currentBuild.currentResult}",
                  to: 'nandakishore.s.menon@gmail.com'
             
              echo 'Email Sent.'
